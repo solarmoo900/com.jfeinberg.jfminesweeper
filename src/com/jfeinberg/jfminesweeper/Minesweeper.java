@@ -162,6 +162,9 @@ public class Minesweeper {
 				ms2.resizeMe(0);
 			}
 		});
+        
+        context.flagButton.setImageDrawable(context.getResources().getDrawable(R.drawable.mine));
+		context.flagMode = 0;
 	}
 	
 	public void addSurrounding(int x, int y) {
