@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rows" />
+
+        <Button
+            android:id="@+id/rowsSub"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/numRows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:gravity="center"
+            android:maxLength="2"
+            android:text="6"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" >
+
+            <requestFocus />
+        </TextView>
+
+        <Button
+            android:id="@+id/rowsAdd"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/begButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/beginner" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/cols"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cols" />
+
+        <Button
+            android:id="@+id/colsSub"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/numCols"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:gravity="center"
+            android:maxLength="2"
+            android:text="6"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" >
+
+            <requestFocus />
+        </TextView>
+
+        <Button
+            android:id="@+id/colsAdd"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/medButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/medium" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/mines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine" />
+
+        <Button
+            android:id="@+id/minesSub"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/numMines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:gravity="center"
+            android:maxLength="2"
+            android:text="6"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" >
+
+            <requestFocus />
+        </TextView>
+
+        <Button
+            android:id="@+id/minesAdd"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/hardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hard" />
+
+    </TableRow>
+
+
+</TableLayout>

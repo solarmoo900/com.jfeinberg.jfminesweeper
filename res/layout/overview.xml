@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_gravity="center" >
+
+    <Space
+        android:id="@+id/spacer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/flagButton"
+        android:layout_below="@+id/spacer"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="horizontal|vertical" >
+
+	    <HorizontalScrollView 
+	        android:id="@+id/horizontalView" 
+	        android:layout_height="wrap_content"     
+	        android:scrollbars="horizontal|vertical" 
+	        android:layout_width="wrap_content"     
+	        android:layout_marginTop="5dip"
+	        android:layout_gravity="center">
+	        
+		        <TableLayout
+			        android:id="@+id/minesweeper2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="match_parent"
+			        android:gravity="center"
+			        android:orientation="vertical" >
+		    	</TableLayout>
+		    	
+        </HorizontalScrollView>
+        
+	</ScrollView>
+
+ 
+    
+    <Button
+        android:id="@+id/flagButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/mine" />
+    
+    <Space
+        android:id="@+id/spacer1"
+        android:layout_width="@dimen/bottomBarSpacing"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/flagButton" />
+    
+    <TextView
+        android:id="@+id/minesRemainString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/flagButton"
+        android:layout_alignBottom="@id/flagButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/remain" />
+    
+    <TextView
+        android:id="@+id/minesRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/minesRemainString"
+        android:layout_alignBottom="@+id/minesRemainString"
+        android:layout_toRightOf="@+id/minesRemainString"
+        android:text="@string/defaultCounter" />
+    
+
+    
+    <Space
+        android:id="@+id/spacer2"
+        android:layout_width="@dimen/bottomBarSpacing"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/minesRemaining" />
+
+   
+     
+    <TextView
+        android:id="@+id/timerString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/minesRemaining"
+        android:layout_alignBottom="@+id/minesRemaining"
+        android:layout_toLeftOf="@+id/time"
+        android:text="@string/chrono" />
+    
+    <TextView
+        android:id="@id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/minesRemaining"
+        android:layout_alignBottom="@id/minesRemaining"
+        android:layout_alignParentRight="true"
+        android:text="@string/defaultCounter"
+        android:layout_marginRight="10dp" />
+    
+    <Chronometer
+        android:id="@+id/chronometer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/flagButton"
+        android:layout_toRightOf="@id/timerString"
+        android:textSize="0sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp" />
+
+
+
+</RelativeLayout>

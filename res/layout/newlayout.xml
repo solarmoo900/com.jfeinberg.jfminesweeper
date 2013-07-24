@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/headerbg" >
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/minesRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/buttons"
+        android:clickable="false"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+       	android:minWidth="100dp"
+       	android:gravity="center"
+        android:text="@string/defaultCounter"
+        android:textSize="20sp" />
+    
+    
+    
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/buttons"
+        android:clickable="false"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+       	android:minWidth="100dp"
+       	android:gravity="center"
+        android:text="@string/defaultCounter"
+        android:textSize="20sp" />
+    
+    
+    
+    <Chronometer
+        android:id="@+id/chronometer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="0sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/minesRemaining"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="horizontal|vertical"
+        android:layout_marginTop="-40dp">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:scrollbars="horizontal|vertical" >
+
+            <TableLayout
+                android:id="@+id/minesweeper2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+    
+    <LinearLayout
+        android:id="@+id/zoomme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/zoomout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_minus"
+            android:contentDescription="@string/zoomout" />
+        <ImageView
+            android:id="@+id/zoomin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_plus"
+            android:contentDescription="@string/zoomin" />
+        
+        
+    </LinearLayout>
+    
+    <ImageButton
+        android:id="@+id/flagButton"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/minesRemaining"
+        android:layout_alignBottom="@+id/minesRemaining"
+        android:background="@drawable/buttons"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/mine"
+        android:scaleType="fitXY"
+        android:src="@drawable/mine" />
+
+ 
+
+</RelativeLayout>

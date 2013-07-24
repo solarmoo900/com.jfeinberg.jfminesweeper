@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+ 
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+ 
+        <TextView
+            android:id="@+id/TextView21"
+            android:text="" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/TextView22"
+            android:text="@string/wins"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/TextView23"
+            android:text="@string/losses"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/TextView24"
+            android:text="@string/best_time"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+
+    </TableRow>
+ 
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+ 
+        <TextView
+            android:id="@+id/textView31"
+            android:text="@string/beginner"
+            android:textStyle="bold" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/begWins"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/begLosses"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/begTime"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+
+    </TableRow>
+ 
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+ 
+        <TextView
+            android:id="@+id/textView41"
+            android:text="@string/medium"
+            android:textStyle="bold" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/medWins"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/medLosses"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/medTime"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+    </TableRow>
+ 
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+ 
+        <TextView
+            android:id="@+id/textView8"
+            android:text="@string/hard"
+            android:textStyle="bold" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/hardWins"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/hardLosses"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/hardTime"
+            android:gravity="center_horizontal"
+            android:text="0" >
+        </TextView>
+
+    </TableRow>
+ 
+</TableLayout>
