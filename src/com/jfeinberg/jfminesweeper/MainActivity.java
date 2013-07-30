@@ -1,5 +1,7 @@
 package com.jfeinberg.jfminesweeper;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.app.Activity;
@@ -113,7 +115,7 @@ public class MainActivity extends Activity {
     protected void onStart() {
     	super.onStart();
     	this.newGameMenu(true);
-    	
+    	EasyTracker.getInstance().activityStart(this);
     }
 
     @Override
@@ -153,6 +155,12 @@ public class MainActivity extends Activity {
     	}
     	
     	super.onResume();
+    }
+    
+    @Override
+    protected void onStop() {
+    	super.onStop();
+    	EasyTracker.getInstance().activityStop(this);
     }
     
     
