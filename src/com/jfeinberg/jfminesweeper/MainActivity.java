@@ -38,6 +38,7 @@ public class MainActivity extends Activity {
 	public int seconds;
 	boolean hasScrolled = false;
 	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,12 +164,17 @@ public class MainActivity extends Activity {
     	EasyTracker.getInstance().activityStop(this);
     }
     
-    
+	/**
+	 * This function stops the game and removes the board from the screen
+	 * while stopping the running timer
+	 *
+	 */
     public void newGame() {
     	this.gl.removeAllViews();
     	this.ms = new Minesweeper(this.gl, this);
     	this.timer.stop();
     }
+    
     
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -195,6 +201,12 @@ public class MainActivity extends Activity {
     	}
     }
     
+	/**
+	 * Creates the new game menu screen with buttons to increase and decrease
+	 * the numbers. It starts the new game and it's timer
+	 *
+	 * @param  onStart  specifies if being called when game is going (true) or on boot (false)
+	 */
     public void newGameMenu(boolean onStart) {
     	this.seconds = 0;
     	this.ms.isPaused = true;
@@ -371,6 +383,11 @@ public class MainActivity extends Activity {
         alert.show();	
     }
     
+	/**
+	 * Creates an AlertDialog that shows the players statistics and creates
+	 * a reset button
+	 *
+	 */
     public void statsMenu() {
     	this.ms.isPaused = true;
     	LayoutInflater factory = LayoutInflater.from(this);            

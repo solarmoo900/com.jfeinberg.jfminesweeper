@@ -25,6 +25,13 @@ public class Box extends Button {
 	private Drawable myflag;
 	private Drawable defaultBG;
 
+	/**
+	 * Creates a button with additional attributes
+	 *
+	 * @param  ms        instance of the minesweeper game
+	 * @param  context   context of the game for reference to screen and timer
+	 * @return     		 an instance of a Box
+	 */
 	public Box(Minesweeper ms, Context context) {
 		super(context);
 		this.isMine = false;
@@ -42,26 +49,39 @@ public class Box extends Button {
 		float font = (float) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 
                 (float) 15.0, getResources().getDisplayMetrics());
 		this.setTextSize(font);
-		/*int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 
-                (float) -5, getResources().getDisplayMetrics());
-		this.setPadding(padding,padding,padding,padding);*/
-		//this.setPadding(-10, -10, -10, -10);
 		super.setText(String.valueOf(this.charRepresentation));
 		this.defaultBG = this.getBackground();
 	}
 	
-
+	/**
+	 * Sets this Box as a mine
+	 */
 	public void makeMine() {
 		this.isMine = true;
 	}
+	/**
+	 * Returns an integer specifying if this Box is a mine
+	 *
+	 * @return      an integer
+	 */
 	public int isMine() {
 		return (this.isMine) ? 1 : 0;
 	}
-
+	
+	/**
+	 * Adds 1 to the total surrounding mines
+	 *
+	 */
 	public void addSurrounding() {
 		this.surrounding++;
 	}
 
+	/**
+	 * If a non-hit Box with 0 surrounding it will be hit automatically if a
+	 * surrounding non-hit Box with 0 surrounding is hit
+	 *
+	 * @return      the surrounding mines
+	 */
 	public int clearMe() {
 		if (this.isHit) {
 			return 1;
@@ -72,6 +92,12 @@ public class Box extends Button {
 		return this.surrounding;
 	}
 
+	/**
+	 * When a Box is hit it is filled in with the number of surrounding mines.
+	 * If the it is 0 then it replaces it with a blue button
+	 *
+	 * @return      a string of the action that occurred or the amount of surrounding mines
+	 */
 	public String hitMe() {
 		if (this.isHit) {
 			return "HIT";
@@ -123,6 +149,14 @@ public class Box extends Button {
 		}
 	}
 
+	
+	/**
+	 * If the minesweeper game is in flag mode this is called when a Box is hit.
+	 * If it is set to be flagged it creates the bitmap or reuses an existing one
+	 * and sets that as the background
+	 *
+	 * @return      an empty string on success
+	 */
 	@SuppressWarnings("deprecation")
 	@SuppressLint("NewApi")
 	public String flagMe() {
@@ -151,15 +185,18 @@ public class Box extends Button {
 		    } else {
 		    	super.setBackgroundDrawable(this.myflag);
 		    }
-			//this.charRepresentation = 'F';
 			this.ms.boxesFlagged++;
 		}
-		//super.setText(String.valueOf(this.charRepresentation));
-		//this.setForeground(Color.red);
-		//super.setTextColor(Color.RED);
 		return "";
 	}
 	
+	/**
+	 * Ran when a game is ended to show the location of all mines. If a Box
+	 * is marked as with a flag but is not a mine it is replaced with a graphic.
+	 *
+	 * @param  wrongmine  sends a pre-scalled Bitmap for an incorrect marked mine
+	 * @param  mymine     sends a pre-scalled Bitmap for a mine
+	 */
 	@SuppressWarnings("deprecation")
 	@SuppressLint("NewApi")
 	public void showResult(Drawable wrongmine, Drawable mymine) {

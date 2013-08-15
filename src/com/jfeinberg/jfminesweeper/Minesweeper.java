@@ -66,6 +66,16 @@ public class Minesweeper {
 		this.boxesFilled++;
 	}
 
+	/**
+	 * Creates the actual minesweeper board as well as all Boxes. Sets up certain
+	 * boxes as mines.
+	 *
+	 * @param  frame2   tablerow to hold board
+	 * @param  x        number of rows
+	 * @param  y        number of columns
+	 * @param  mines	number of mines
+	 * @param  context  context of activity
+	 */
 	public void createBoard(ViewGroup frame2, int x, int y, int mines, MainActivity context) {
 		TableLayout frame = (TableLayout) frame2;
 		this.context = context;
@@ -167,6 +177,14 @@ public class Minesweeper {
 		context.flagMode = 0;
 	}
 	
+	/**
+	 * When a Box is marked as a mine, the surrounding mines surrounding
+	 * value is increased
+	 *
+	 * @param  x   x coordinate of Box hit
+	 * @param  y   y coordinate of Box hit
+	 * @see    Box
+	 */
 	public void addSurrounding(int x, int y) {
 		if (x != 0) {
 			this.board[x-1][y].addSurrounding();
@@ -196,6 +214,14 @@ public class Minesweeper {
 		}
 	}
 	
+	/**
+	 * If Box is hit an has no surrounding mines, the surrounding
+	 * boxes will be marked as hit
+	 *
+	 * @param  x   x coordinate of Box hit
+	 * @param  y   y coordinate of Box hit
+	 * @see    Box
+	 */
 	public void fixSurrounding(int x, int y) {
 		if (x != 0) {
 			if (this.board[x-1][y].clearMe() == 0) {
@@ -241,6 +267,14 @@ public class Minesweeper {
 		}
 	}
 	
+	/**
+	 * Calculates the amount of surrounding mines to a Box
+	 *
+	 * @param  x   x coordinate of Box to lookup
+	 * @param  y   y coordinate of Box to lookup
+	 * @return     an integer with the amount of surrounding mines
+	 * @see    Box
+	 */
 	public int getSurrounding(int x, int y) {
 		int count = 0;
 		if (x != 0) {
@@ -272,6 +306,14 @@ public class Minesweeper {
 		return count;
 	}
 	
+	/**
+	 * Attempts to hit a Box
+	 *
+	 * @param  x   x coordinate of Box hit
+	 * @param  y   y coordinate of Box hit
+	 * @return     an integer specifying result of hitting attempt
+	 * @see    Box
+	 */
 	public int hitIt(int x, int y) {
 		if (!this.isGoing) {
 			this.isGoing = true;
@@ -302,6 +344,14 @@ public class Minesweeper {
 		return 4;
 	}
 	
+	/**
+	 * Marks a Box as flagged or unflags it
+	 *
+	 * @param  x   x coordinate of Box hit
+	 * @param  y   y coordinate of Box hit
+	 * @return     an integer specifying result of flagging attempt
+	 * @see    Box
+	 */
 	public int flagIt(int x, int y) {
 		if (!this.isGoing) {
 			this.isGoing = true;
@@ -321,6 +371,10 @@ public class Minesweeper {
 	    return 4;
 	}
 	
+	/**
+	 * When a game is finished, scalled Bitmaps are generated and the results shown
+	 *
+	 */
 	public void showResults() {
 		Bitmap wmine = BitmapFactory.decodeResource(this.context.getResources(), R.drawable.wrongmine);
 		Bitmap wmineScaled = Bitmap.createScaledBitmap(wmine, this.board[0][0].getWidth(), this.board[0][0].getHeight(), true);
@@ -335,6 +389,12 @@ public class Minesweeper {
 	    }
 	  }
 	
+	/**
+	 * Gets the result of all actions on a button. If a victory or defeat the 
+	 * players statistics are updated
+	 *
+	 * @param  result    an integer sent from the Box specifying hit result
+	 */
 	public void getResult(int result) {
 		boolean good = true;
 		switch (result) {
@@ -479,6 +539,11 @@ public class Minesweeper {
 		}
 	}
 	
+	/**
+	 * Zooms in or out of the board by scalling the size of each Box
+	 *
+	 * @param  big       increase or decrease the size
+	 */
 	public void resizeMe(int big) {
 		double resizeButton = 0.0;
 		double resizeText = 0.0;
